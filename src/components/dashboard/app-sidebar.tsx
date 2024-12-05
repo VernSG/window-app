@@ -2,18 +2,17 @@
 
 import * as React from "react";
 import {
-  BookOpen,
-  Bot,
-  Frame,
-  GalleryVerticalEnd,
-  Map,
+  ShoppingCart,
+  List,
+  DollarSign,
+  Clock,
   PieChart,
   Settings2,
-  SquareTerminal,
+  User,
+  Printer,
 } from "lucide-react";
 
 import { NavMain } from "./nav-main";
-import { NavProjects } from "./nav-projects";
 import { NavUser } from "./nav-user";
 import { TeamSwitcher } from "./team-switcher";
 import {
@@ -24,122 +23,74 @@ import {
   SidebarRail,
 } from "../ui/sidebar";
 
-// This is sample data.
 const data = {
   user: {
-    name: "shadcn",
+    name: "VernSG",
     email: "m@example.com",
-    avatar: "/avatars/shadcn.jpg",
+    avatar: "/vite.svg",
   },
   teams: [
     {
-      name: "Project Sekai",
-      logo: GalleryVerticalEnd,
+      name: "Kasir App",
+      logo: ShoppingCart,
       plan: "Enterprise",
     },
   ],
   navMain: [
     {
-      title: "Playground",
+      title: "Dashboard",
       url: "#",
-      icon: SquareTerminal,
+      icon: PieChart,
       isActive: true,
-      items: [
-        {
-          title: "History",
-          url: "#",
-        },
-        {
-          title: "Starred",
-          url: "#",
-        },
-        {
-          title: "Settings",
-          url: "#",
-        },
-      ],
     },
     {
-      title: "Models",
+      title: "Barang",
       url: "#",
-      icon: Bot,
+      icon: List,
       items: [
         {
-          title: "Genesis",
+          title: "Daftar Barang",
           url: "#",
         },
         {
-          title: "Explorer",
-          url: "#",
-        },
-        {
-          title: "Quantum",
+          title: "Kategori Barang",
           url: "#",
         },
       ],
     },
     {
-      title: "Documentation",
+      title: "Transaksi",
       url: "#",
-      icon: BookOpen,
+      icon: DollarSign,
       items: [
         {
-          title: "Introduction",
+          title: "Penjualan Baru",
           url: "#",
         },
         {
-          title: "Get Started",
-          url: "#",
-        },
-        {
-          title: "Tutorials",
-          url: "#",
-        },
-        {
-          title: "Changelog",
+          title: "Riwayat Transaksi",
           url: "#",
         },
       ],
     },
     {
-      title: "Settings",
+      title: "Pengaturan",
       url: "#",
       icon: Settings2,
       items: [
         {
-          title: "General",
+          title: "Printer",
           url: "#",
         },
         {
-          title: "Team",
+          title: "Pengguna",
           url: "#",
         },
         {
-          title: "Billing",
-          url: "#",
-        },
-        {
-          title: "Limits",
+          title: "Toko",
           url: "#",
         },
       ],
-    },
-  ],
-  projects: [
-    {
-      name: "Design Engineering",
-      url: "#",
-      icon: Frame,
-    },
-    {
-      name: "Sales & Marketing",
-      url: "#",
-      icon: PieChart,
-    },
-    {
-      name: "Travel",
-      url: "#",
-      icon: Map,
     },
   ],
 };
@@ -154,7 +105,6 @@ export default function AppSidebar({
       </SidebarHeader>
       <SidebarContent>
         <NavMain items={data.navMain} />
-        <NavProjects projects={data.projects} />
       </SidebarContent>
       <SidebarFooter>
         <NavUser user={data.user} />
